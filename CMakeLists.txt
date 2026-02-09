@@ -7,6 +7,12 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(PROJECT_SOURCES
     src/main.cpp
+    src/components/Component.cpp
+    src/entity/Entity.cpp
+    src/managers/EntityManager.cpp
+    src/game/Game.cpp
+    src/components/SpriteComponent.cpp
+    src/components/TransformComponent.cpp
 )
 
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})

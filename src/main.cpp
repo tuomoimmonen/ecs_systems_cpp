@@ -1,9 +1,15 @@
 #include <iostream>
+#include "game/Game.h"
 
 int main()
 {
-    std::cout << "test from windows\n";
-    std::cout << "test from mac\n";
-    std::cin.get();
+    Game game;
+
+    while (game.is_running())
+    {
+        game.update();
+    }
+
+    std::cout << "\nPROGRAM ENDING\n";
     return 0;
 }
