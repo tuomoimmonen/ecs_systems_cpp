@@ -28,8 +28,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 
 if(APPLE)
     target_link_libraries(${PROJECT_NAME} PRIVATE
-
-    )
+    
+)
 
 endif()
 
