@@ -8,7 +8,10 @@ public:
     EntityManager();
     ~EntityManager();
 
+    void update();
+
     void add_entity(std::unique_ptr<Entity> new_entity);
+    const std::vector<std::unique_ptr<Entity>>& get_entities();
 
     void print();
 

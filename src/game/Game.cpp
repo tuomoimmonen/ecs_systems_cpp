@@ -38,6 +38,8 @@ void Game::update()
     // 2. UPDATE
 
     // 3. RENDER
+    m_buffer.clear_buffer();
+    m_render.render(m_entity_manager, m_buffer);
 
     m_entity_manager.print();
     std::cin.get();

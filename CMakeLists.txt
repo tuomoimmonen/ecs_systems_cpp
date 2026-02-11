@@ -13,6 +13,8 @@ set(PROJECT_SOURCES
     src/game/Game.cpp
     src/components/SpriteComponent.cpp
     src/components/TransformComponent.cpp
+    src/screenbuffer/ScreenBuffer.cpp
+    src/systems/RenderSystem.cpp
 )
 
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})

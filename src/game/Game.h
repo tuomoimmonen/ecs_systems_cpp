@@ -1,5 +1,7 @@
 #pragma once
 #include "managers/EntityManager.h"
+#include "systems/RenderSystem.h"
+#include "screenbuffer/ScreenBuffer.h"
 
 enum class GameState
 {
@@ -26,5 +28,6 @@ private:
     
     GameState m_state = GameState::NONE;
     EntityManager m_entity_manager;
-
+    RenderSystem m_render;
+    ScreenBuffer m_buffer;
 };
