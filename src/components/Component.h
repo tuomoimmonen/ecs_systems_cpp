@@ -13,7 +13,8 @@ public:
     virtual void print() = 0;
 
     void set_owner(Entity* new_owner);
+    Entity* get_owner() const { return m_owner; }
 
-private:
+protected:
     Entity* m_owner;
 };

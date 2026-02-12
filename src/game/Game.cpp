@@ -34,7 +34,8 @@ void Game::create_player()
 void Game::update()
 {
     // 1. INPUT
-
+    m_input.update(m_entity_manager);
+    
     // 2. UPDATE
 
     // 3. RENDER
