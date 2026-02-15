@@ -76,7 +76,7 @@ void InputSystem::update(EntityManager& entity_manager)
                 }
                 }
 
-            } while (input = 'x');
+            } while (input == 'x');
         }
     }
 }

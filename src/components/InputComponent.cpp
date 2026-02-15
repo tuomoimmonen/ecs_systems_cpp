@@ -22,6 +22,11 @@ void InputComponent::update()
     }
 }
 
+void InputComponent::print()
+{
+    std::cout << "InputComponent x/y direction: " << x_direction << ", " << y_direction << "\n";
+}
+
 void InputComponent::set_direction(int x_dir, int y_dir)
 {
     x_direction += x_dir;

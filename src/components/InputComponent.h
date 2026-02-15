@@ -8,6 +8,7 @@ public:
     ~InputComponent();
 
     virtual void update() override;
+    virtual void print() override;
 
     void set_direction(int x_dir, int y_dir);
 

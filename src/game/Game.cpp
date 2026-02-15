@@ -27,6 +27,8 @@ void Game::create_player()
     player->add_component(std::move(transform));
     std::unique_ptr<SpriteComponent> sprite = std::make_unique<SpriteComponent>('@');
     player->add_component(std::move(sprite));
+    std::unique_ptr<InputComponent> input = std::make_unique<InputComponent>();
+    player->add_component(std::move(input));
 
     m_entity_manager.add_entity(std::move(player));
 }
