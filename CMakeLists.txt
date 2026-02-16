@@ -17,6 +17,8 @@ set(PROJECT_SOURCES
     src/systems/RenderSystem.cpp
     src/systems/InputSystem.cpp
     src/components/InputComponent.cpp
+    src/map/Map.cpp
+    src/systems/MovementSystem.cpp
 )
 
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})

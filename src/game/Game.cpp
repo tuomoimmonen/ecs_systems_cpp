@@ -39,13 +39,14 @@ void Game::update()
     m_input.update(m_entity_manager);
     
     // 2. UPDATE
+    m_movement.update(m_entity_manager, test_map);
 
     // 3. RENDER
     m_buffer.clear_buffer();
     m_render.render(m_entity_manager, m_buffer);
 
-    m_entity_manager.print();
-    std::cin.get();
-    m_state = GameState::NONE;
+    //m_entity_manager.print();
+    //std::cin.get();
+    //m_state = GameState::NONE;
 }
 

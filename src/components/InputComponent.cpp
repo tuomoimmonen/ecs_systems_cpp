@@ -16,10 +16,10 @@ InputComponent::~InputComponent()
 
 void InputComponent::update()
 {
-    if (TransformComponent* transform = m_owner->get_component<TransformComponent>()) {
-        transform->set_x(x_direction);
-        transform->set_y(y_direction);
-    }
+    // if (TransformComponent* transform = m_owner->get_component<TransformComponent>()) {
+    //     transform->set_x(x_direction);
+    //     transform->set_y(y_direction);
+    // }
 }
 
 void InputComponent::print()
@@ -29,6 +29,6 @@ void InputComponent::print()
 
 void InputComponent::set_direction(int x_dir, int y_dir)
 {
-    x_direction += x_dir;
-    y_direction += y_dir;
+    x_direction = x_dir;
+    y_direction = y_dir;
 }

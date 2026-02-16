@@ -68,6 +68,8 @@ void InputSystem::update(EntityManager& entity_manager)
                 }
                 default:
                 {
+                    input_comp->set_direction(0, 0);
+                    
                     if (std::cin.fail()) {
                         std::cin.clear();
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
