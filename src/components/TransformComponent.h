@@ -10,8 +10,10 @@ public:
     virtual void update() override;
     virtual void print() override;
 
-    void set_x(int new_x) { x_position += new_x; }
-    void set_y(int new_y) { y_position += new_y; }
+    void add_x(int new_x) { x_position += new_x; }
+    void add_y(int new_y) { y_position += new_y; }
+    void set_x(int new_x) { x_position = new_x; }
+    void set_y(int new_y) { y_position = new_y; }
 
     const int get_x() const { return x_position; }
     const int get_y() const { return y_position; }

@@ -24,15 +24,30 @@ void MomeventSystem::update(EntityManager& entity_manager, const Map& current_ma
 
         if (input && transform)
         {
-            transform->set_x(input->get_x_direction());
-            transform->set_y(input->get_y_direction());
+            transform->add_x(input->get_x_direction());
+            transform->add_y(input->get_y_direction());
 
             int x = transform->get_x();
             int y = transform->get_y();
-            if (current_map.is_inside(x, y))
-            {
-                
+
+            if (x < 1) {
+                x = 1;
+                transform->set_x(x);
             }
+            else if (x > 18) {
+                x = 18;
+                transform->set_x(x);
+            }
+            if (y < 1) {
+                y = 1;
+                transform->set_y(y);
+            }
+            else if (y > 7) {
+                y = 7;
+                transform->set_y(y);
+            }
+                
+            std::cout << "new x/y: " << transform->get_x() << ", " << transform->get_y() << "\n";
         }
     }
 }

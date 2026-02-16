@@ -16,7 +16,13 @@ Map::~Map()
 
 bool Map::is_inside(int x, int y) const
 {
-    return m_boundaries[y][x] != 0;
+    if (x < 20 && y < 10)
+    {
+        return m_boundaries[y][x] != 0;
+    }
+    else {
+        return false;
+    }
 }
 
 void Map::create_map()
