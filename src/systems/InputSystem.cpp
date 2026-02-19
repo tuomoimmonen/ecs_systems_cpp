@@ -13,7 +13,7 @@ InputSystem::~InputSystem()
     std::cout << "\033[31m" << "InputSystem destructor called" << "\033[0m\n";
 }
 
-void InputSystem::update(EntityManager& entity_manager)
+void InputSystem::update(EntityManager& entity_manager, GameState& state)
 {
     // get entities
     for (auto& e : entity_manager.get_entities()) {
@@ -43,7 +43,7 @@ void InputSystem::update(EntityManager& entity_manager)
                 case 'q':
                 {
                     // TODO END PROGRAM
-
+                    state = GameState::NONE;
                     break;
                 }
                 case 'w':

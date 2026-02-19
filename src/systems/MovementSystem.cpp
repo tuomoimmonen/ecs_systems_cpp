@@ -1,6 +1,7 @@
 #include "MovementSystem.h"
 #include "components/InputComponent.h"
 #include "components/TransformComponent.h"
+#include "components/AIComponent.h"
 #include "map/Map.h"
 
 #include <iostream>
@@ -21,6 +22,7 @@ void MomeventSystem::update(EntityManager& entity_manager, const Map& current_ma
     {
         InputComponent* input = e->get_component<InputComponent>();
         TransformComponent* transform = e->get_component<TransformComponent>();
+        AIComponent* ai = e->get_component<AIComponent>();
 
         if (input && transform)
         {
@@ -35,26 +37,22 @@ void MomeventSystem::update(EntityManager& entity_manager, const Map& current_ma
             transform->add_x(x_dir);
             transform->add_y(y_dir);
 
-            //std::cout << "inside: " << inside << "\n";
+            //std::cout << "new x/y: " << transform->get_x() << ", " << transform->get_y() << "\n";
+        }
+        else if (ai && transform)
+        {
+            int x_pos = transform->get_x();
+            int x_dir = ai->get_x();
+            int y_pos = transform->get_y();
+            int y_dir = ai->get_y();
 
-            // if (x < 1) {
-            //     x = 1;
-            //     transform->set_x(x);
-            // }
-            // else if (x > 18) {
-            //     x = 18;
-            //     transform->set_x(x);
-            // }
-            // if (y < 1) {
-            //     y = 1;
-            //     transform->set_y(y);
-            // }
-            // else if (y > 8) {
-            //     y = 8;
-            //     transform->set_y(y);
-            // }
-                
-            std::cout << "new x/y: " << transform->get_x() << ", " << transform->get_y() << "\n";
+            bool inside = current_map.is_inside(x_pos + x_dir, y_pos + y_dir);
+            if (!inside) return;
+
+            transform->add_x(x_dir);
+            transform->add_y(y_dir);
+
+            //std::cout << "AI new x/y: " << transform->get_x() << ", " << transform->get_y() << "\n";
         }
     }
 }

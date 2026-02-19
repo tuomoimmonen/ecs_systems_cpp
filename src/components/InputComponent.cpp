@@ -16,10 +16,7 @@ InputComponent::~InputComponent()
 
 void InputComponent::update()
 {
-    // if (TransformComponent* transform = m_owner->get_component<TransformComponent>()) {
-    //     transform->set_x(x_direction);
-    //     transform->set_y(y_direction);
-    // }
+
 }
 
 void InputComponent::print()

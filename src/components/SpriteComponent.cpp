@@ -26,3 +26,9 @@ void SpriteComponent::print()
 {
     std::cout << "SpriteComponent symbol: " << m_symbol << "\n";
 }
+
+void SpriteComponent::set_texture(std::shared_ptr<Texture> new_texture)
+{
+    m_texture = new_texture;
+    m_symbol = m_texture->m_symbol;
+}

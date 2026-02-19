@@ -5,11 +5,9 @@
 #include "systems/MovementSystem.h"
 #include "screenbuffer/ScreenBuffer.h"
 #include "map/Map.h"
+#include "utilities/GameState.h"
 
-enum class GameState
-{
-    NONE = 0, RUNNING
-};
+class Texture;
 
 class Game
 {
@@ -24,6 +22,8 @@ private:
     void init();
 
     void create_player();
+    void create_enemy();
+    void create_enemies();
 
 private:
     int m_screen_width = 20;
@@ -36,5 +36,6 @@ private:
     MomeventSystem m_movement;
     ScreenBuffer m_buffer;
 
+    std::shared_ptr<Texture> m_enemy_texture;
     Map test_map;
 };
