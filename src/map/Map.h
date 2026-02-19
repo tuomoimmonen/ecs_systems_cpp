@@ -14,5 +14,4 @@ private:
     
 private:
     int m_boundaries[10][20];
-
 };

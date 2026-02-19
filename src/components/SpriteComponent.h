@@ -1,5 +1,7 @@
 #pragma once
 #include "Component.h"
+#include "texture/Texture.h"
+#include <memory>
 
 class SpriteComponent : public Component
 {
@@ -15,6 +17,6 @@ public:
 
 private:
     char m_symbol = 'D';
-
+    std::shared_ptr<Texture> m_texture = nullptr;
 };
 

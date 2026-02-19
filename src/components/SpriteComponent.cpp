@@ -5,6 +5,11 @@ SpriteComponent::SpriteComponent(const char new_symbol)
     :m_symbol(new_symbol)
 {
     std::cout << "SpriteComponent constructor called\n";
+
+    if (m_texture != nullptr) {
+        m_symbol = m_texture->m_symbol;
+        std::cout << "SpriteComponent has Texture\n";
+    }
 }
 
 SpriteComponent::~SpriteComponent()
